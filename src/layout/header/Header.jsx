@@ -1,27 +1,18 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navData } from "./headData";
+import { FiUser, FiShoppingBag } from "react-icons/fi";
+import TopBar from "./TopBar";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
   const { pathname } = useLocation();
-
+  const { user, logOut } = useAuth();
+  const signOut = () => {
+    logOut();
+  };
   return (
     <>
-      <div className="topb-bar bg-[#1d2538] border-b-2 border-[#fca120] py-2 px-4 text-white flex justify-between">
-        <div className="time">Today: 22-July-2024, 02:55:00 PM</div>
-        <div className="top-menu flex gap-5">
-          <div className="social">
-            <ul className="flex gap-5">
-              <li>FB</li>
-              <li>TW</li>
-              <li>LN</li>
-              <li>YT</li>
-            </ul>
-          </div>
-          <div className="panel">
-            <Link to="/login">Login</Link>
-          </div>
-        </div>
-      </div>
+      <TopBar />
       <div className="sticky top-0 z-50">
         <div className="middle-bar bg-white py-4 px-4 flex justify-between  ">
           <div className="logo">
@@ -35,13 +26,29 @@ const Header = () => {
             </Link>
           </div>
           <div className="details flex gap-10">
-            <div className="info">
-              <div className="">স্থাপিত: ১৯৯৬ ইং</div>
-              <div className="">ই.আই.আই.এন: 117464</div>
-            </div>
-            <div className="contact">
-              <div className="email">test@gmail.com</div>
-              <div className="number"> +88017123456789</div>
+            <Link
+              to={user ? "/profile" : "/signin"}
+              className="info flex gap-2 justify-center items-center"
+            >
+              <FiUser size={30} />
+              <div className="cont">
+                <h1 className="text-sm text-black font-bold">
+                  {user ? user?.displayName : "Account"}
+                </h1>
+                <h1 className="text-xs text-secondary">
+                  {user ? "Admin" : "Login"}
+                </h1>
+              </div>
+            </Link>
+            <div
+              className="info flex gap-2 justify-center items-center"
+              onClick={signOut}
+            >
+              <FiShoppingBag size={30} />
+              <div className="cont">
+                <h1 className="text-sm text-black font-bold">Cart</h1>
+                <h1 className="text-xs text-secondary">3 items</h1>
+              </div>
             </div>
           </div>
         </div>

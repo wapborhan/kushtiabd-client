@@ -4,6 +4,7 @@ import useDistrict from "../../hooks/data/useDistrict";
 import useUpazila from "../../hooks/data/useUpazila";
 import { useEffect, useState } from "react";
 import Select from "../../components/shared/Select";
+import DonarList from "./DonarList";
 
 const Search = () => {
   const [divisions] = useDivision();
@@ -30,6 +31,7 @@ const Search = () => {
       : [];
 
     setFilteredUpazila(filteredUpazila);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [division, district]);
 
   const onSubmitData = (e) => {
@@ -47,50 +49,53 @@ const Search = () => {
   return (
     <>
       <Box title={`রক্তদাতা খুজুন`}>
-        <form onSubmit={onSubmitData}>
-          <div className="grid grid-cols-5 gap-5">
-            <div className="division">
-              <Select
-                name="Division"
-                disableCon={true}
-                setData={setDivision}
-                data={divisions}
-              />
+        <div className="donar">
+          <form onSubmit={onSubmitData}>
+            <div className="grid grid-cols-5 gap-5">
+              <div className="division">
+                <Select
+                  name="Division"
+                  disableCon={true}
+                  setData={setDivision}
+                  data={divisions}
+                />
+              </div>
+              <div className="district">
+                <Select
+                  name="District"
+                  setData={setDistrict}
+                  disableCon={division}
+                  data={filteredDistricts}
+                />
+              </div>
+              <div className="upozila">
+                <Select
+                  name="Upozila"
+                  setData={setUpazila}
+                  disableCon={district}
+                  data={filteredUpazila}
+                />
+              </div>
+              <div className="group">
+                <Select
+                  name="Blood Group"
+                  setData={setBloodGroup}
+                  disableCon={true}
+                  data={[
+                    { id: "1", name: "A+" },
+                    { id: "2", name: "A-" },
+                  ]}
+                />
+              </div>
+              <div className="button">
+                <button className="bg-primary p-2 w-full" type="submit">
+                  Search
+                </button>
+              </div>
             </div>
-            <div className="district">
-              <Select
-                name="District"
-                setData={setDistrict}
-                disableCon={division}
-                data={filteredDistricts}
-              />
-            </div>
-            <div className="upozila">
-              <Select
-                name="Upozila"
-                setData={setUpazila}
-                disableCon={district}
-                data={filteredUpazila}
-              />
-            </div>
-            <div className="group">
-              <Select
-                name="Blood Group"
-                setData={setBloodGroup}
-                disableCon={true}
-                data={[
-                  { id: "1", name: "A+" },
-                  { id: "2", name: "A-" },
-                ]}
-              />
-            </div>
-            <div className="button">
-              <button className="bg-primary p-2 w-full" type="submit">
-                Search
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+          <DonarList />
+        </div>
       </Box>
     </>
   );
