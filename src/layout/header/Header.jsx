@@ -17,20 +17,25 @@ const Header = () => {
         <div className="middle-bar bg-white py-4 px-4 flex justify-between  ">
           <div className="logo">
             <Link to="/" className="text-2xl font-bold text-black">
-              {/* <img
-              src="https://mdsobedalischool.com/wp-content/uploads/sites/3/2023/08/Md-Sobed-Ali-Secondery-School.svgs"
-              alt="KushtiBD"
-              className="w-60"
-            /> */}
+              {/* <img src="" className="w-60" /> */}
               KushtiaBD
             </Link>
           </div>
           <div className="details flex gap-10">
             <Link
-              to={user ? "/profile" : "/signin"}
+              to={user ? "/dashboard/profile" : "/signin"}
               className="info flex gap-2 justify-center items-center"
             >
-              <FiUser size={30} />
+              {user ? (
+                <img
+                  src={user?.photoURL}
+                  alt="P"
+                  className="w-[40px] h-[40px]"
+                />
+              ) : (
+                <FiUser size={30} />
+              )}
+
               <div className="cont">
                 <h1 className="text-sm text-black font-bold">
                   {user ? user?.displayName : "Account"}

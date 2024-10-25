@@ -1,4 +1,4 @@
-import DonarCrad from "../../components/shared/DonarCrad";
+import DonarCrad from "../../../components/shared/DonarCrad";
 
 const DonarList = () => {
   return (

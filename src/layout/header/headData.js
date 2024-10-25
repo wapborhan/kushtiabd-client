@@ -9,4 +9,9 @@ export const navData = [
     name: "সার্ভিস সমূহ",
     link: "/services",
   },
+  {
+    id: 3,
+    name: "প্রশ্ন উত্তর",
+    link: "/quest-ans",
+  },
 ];

@@ -3,7 +3,6 @@ import SocialSignIn from "./SocialSignIn";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { TbLoader3 } from "react-icons/tb";
-// import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { logIn } = useAuth();
@@ -19,12 +18,12 @@ const SignIn = () => {
     logIn(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
-
-        navigate(location?.state ? location?.state : "/");
+        if (user) {
+          navigate(location?.state ? location?.state : "/");
+        }
       })
       .catch((err) => {
-        // console.error(err);
+        console.error(err);
       });
   };
 
@@ -126,7 +125,7 @@ const SignIn = () => {
                 onClick={() => setLoading(true)}
               >
                 {loading ? (
-                  <TbLoader3 className="text-[1.8rem] animate-spin text-primary  mx-auto" />
+                  <TbLoader3 className="text-[1.8rem] animate-spin text-white  mx-auto" />
                 ) : (
                   "Log in"
                 )}
