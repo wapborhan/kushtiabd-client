@@ -7,6 +7,8 @@ import About from "../pages/root/blood/About";
 import SignIn from "../layout/signin/SignIn";
 import SignUp from "../layout/signup/SignUp";
 import Profile from "../pages/dash/profile/Profile";
+import QuestAns from "../pages/root/quest-ans/QuestAns";
+import Answare from "../pages/root/quest-ans/Answare";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,11 @@ const router = createBrowserRouter([
 
       {
         path: "/quest-ans",
-        element: <About />,
+        element: <QuestAns />,
+      },
+      {
+        path: "/answare/:id",
+        element: <Answare />,
       },
       {
         path: "/about",
