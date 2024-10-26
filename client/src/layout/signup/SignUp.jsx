@@ -21,7 +21,7 @@ const SignUp = () => {
       // console.log(loggedUser);
       updateUserProfile(
         formData.username,
-        "https://raw.githubusercontent.com/wapborhan/kushtiabd-client/refs/heads/main/public/images/avatar.png"
+        "https://raw.githubusercontent.com/wapborhan/kushtiabd-client/refs/heads/main/public/images/avatar.png",
       )
         .then(() => {
           const userInfo = {
@@ -84,7 +84,7 @@ const SignUp = () => {
                 {...register("email", { required: true })}
                 name="email"
                 autoFocus
-                defaultValue="borhanuddin979@gmail.com"
+                // defaultValue="borhanuddin979@gmail.com"
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
@@ -107,7 +107,7 @@ const SignUp = () => {
                   pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                 })}
                 placeholder="password"
-                defaultValue="Abc@123"
+                // defaultValue="Abc@123"
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
               {errors.password?.type === "required" && (
@@ -168,7 +168,8 @@ const SignUp = () => {
               Log In!
             </Link>
           </p>
-          {/* <p className="mt-6 text-sm text-center text-gray-300">
+          {
+            /* <p className="mt-6 text-sm text-center text-gray-300">
           Read our
           <a href="#" className="underline">
             terms
@@ -177,7 +178,8 @@ const SignUp = () => {
           <a href="#" className="underline">
             conditions
           </a>
-        </p> */}
+        </p> */
+          }
         </div>
       </div>
     </div>

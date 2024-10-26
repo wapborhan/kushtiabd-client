@@ -52,7 +52,8 @@ const SignIn = () => {
               Get Started!
             </Link>
           </p>
-          {/* <p className="mt-6 text-sm text-center text-gray-300">
+          {
+            /* <p className="mt-6 text-sm text-center text-gray-300">
               Read our
               <a href="#" className="underline">
                 terms
@@ -61,7 +62,8 @@ const SignIn = () => {
               <a href="#" className="underline">
                 conditions
               </a>
-            </p> */}
+            </p> */
+          }
         </div>
         <div className="p-5 bg-white md:flex-1">
           <h3 className="my-4 text-2xl font-semibold text-gray-700">
@@ -77,7 +79,7 @@ const SignIn = () => {
                 name="email"
                 placeholder="email"
                 autoFocus
-                defaultValue="borhanuddin979@gmail.com"
+                // defaultValue="borhanuddin979@gmail.com"
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
@@ -100,13 +102,14 @@ const SignIn = () => {
                 type="password"
                 name="password"
                 placeholder="password"
-                defaultValue="Abc@123"
+                // defaultValue="Abc@123"
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
             </div>
-            {/* <div className="flex items-center space-x-2">
+            {
+              /* <div className="flex items-center space-x-2">
               <label className="label">
-                <LoadCanvasTemplate /> 
+                <LoadCanvasTemplate />
               </label>
               <input
                 // onBlur={handleValidateCaptcha}
@@ -115,7 +118,8 @@ const SignIn = () => {
                 placeholder="type the captcha above"
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
               />
-            </div> */}
+            </div> */
+            }
             <div>
               <button
                 type="submit"
@@ -124,11 +128,13 @@ const SignIn = () => {
                 className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-primary rounded-md shadow hover:bg-secondary focus:outline-none focus:ring-blue-200 focus:ring-4"
                 onClick={() => setLoading(true)}
               >
-                {loading ? (
-                  <TbLoader3 className="text-[1.8rem] animate-spin text-white  mx-auto" />
-                ) : (
-                  "Log in"
-                )}
+                {loading
+                  ? (
+                    <TbLoader3 className="text-[1.8rem] animate-spin text-white  mx-auto" />
+                  )
+                  : (
+                    "Log in"
+                  )}
               </button>
             </div>
             <div className="flex flex-col space-y-5">

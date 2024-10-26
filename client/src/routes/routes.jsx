@@ -9,6 +9,7 @@ import SignUp from "../layout/signup/SignUp";
 import Profile from "../pages/dash/profile/Profile";
 import QuestAns from "../pages/root/quest-ans/QuestAns";
 import Answare from "../pages/root/quest-ans/Answare";
+// import CoomingSoon from "../layout/CoomingSoon";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        // element: <CoomingSoon />,
         element: <HomePage />,
       },
       {

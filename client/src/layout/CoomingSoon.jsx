@@ -49,7 +49,8 @@ const CoomingSoon = () => {
 
       <header>Website Coming Soon</header>
       <p>
-        We are excited to announce that we will be launching soon and {"can't"}{" "}
+        We are excited to announce that we will be launching soon and {"can't"}
+        {" "}
         wait to share our new platform with you.
       </p>
       <div className="time-content">
@@ -70,13 +71,15 @@ const CoomingSoon = () => {
           <span className="text">seconds</span>
         </div>
       </div>
-      <div className="email-content">
+      {
+        /* <div className="email-content">
         <p>Subscribe now to get the latest updates!</p>
         <div className="input-box">
           <input type="email" placeholder="Enter your email..." />
           <button>Notify Me</button>
         </div>
-      </div>
+      </div> */
+      }
     </section>
   );
 };

@@ -12,23 +12,49 @@ const Root = () => {
   }, [pathname]);
 
   return (
-    <div
-      className="px-32 mx-auto bg-white"
-      style={{
-        backgroundImage: `url(/images/bg.png)`,
-      }}
-    >
-      {pathname === "/404" ? "" : <Header />}
-      <div className="flex justify-between gap-7 bg-white px-32s">
-        <div className="pages basis-3/4 ">
-          <Outlet />
+    <>
+      {pathname !== "/"
+        ? (
+          <div
+            className="px-32 mx-auto bg-white"
+            style={{
+              backgroundImage: `url(/images/bg.png)`,
+            }}
+          >
+            <Header />
+            <div className="flex justify-between gap-7 bg-white px-32s">
+              <div className="pages basis-3/4 ">
+                <Outlet />
+              </div>
+              <div className="sidebar w-full basis-1/4 bg-white">
+                <Sidebar />
+              </div>
+            </div>
+            <Footer />
+          </div>
+        )
+        : <Outlet />}
+
+      {
+        /* <div
+        className="px-32 mx-auto bg-white"
+        style={{
+          backgroundImage: `url(/images/bg.png)`,
+        }}
+      >
+        {pathname === "/" ? "" : <Header />}
+        <div className="flex justify-between gap-7 bg-white px-32s">
+          <div className="pages basis-3/4 ">
+            <Outlet />
+          </div>
+          <div className="sidebar w-full basis-1/4 bg-white">
+            <Sidebar />
+          </div>
         </div>
-        <div className="sidebar w-full basis-1/4 bg-white">
-          <Sidebar />
-        </div>
-      </div>
-      {pathname === "/404" ? "" : <Footer />}
-    </div>
+        {pathname === "/404" ? "" : <Footer />}
+      </div> */
+      }
+    </>
   );
 };
 

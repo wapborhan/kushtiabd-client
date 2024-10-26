@@ -15,14 +15,18 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: [
+      fontSrc: ["'self'"],
+      imgSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: [
         "'self'",
         process.env.CLIENT,
-        "https://www.pagespeed-mod.com",
-        "https://www.google-analytics.com",
-        "https://www.googletagmanager.com",
+        "https://api.weatherapi.com/",
+        "https://firebase.googleapis.com/",
       ],
+      frameSrc: ["'self'"],
     },
+    reportOnly: true,
   })
 );
 
