@@ -3,7 +3,8 @@ const Footer = () => {
     "text-lg font-bold border-b-[#fca120] border-b w-11/12 mb-4 pb-2";
   return (
     <>
-      <div className="bg-[#1d2538] text-white px-8 py-5">
+      {
+        /* <div className="bg-[#1d2538] text-white px-8 py-5">
         <div className="grid grid-cols-3">
           <div className="info flex flex-col w-full items-center justify-center space-y-2">
             <h2 className={styleh5}>About</h2>
@@ -33,7 +34,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */
+      }
       <div className="credit bg-slate-900 text-center text-white py-3 px-10 flex justify-between gap-5">
         <div>Copyright © {new Date().getFullYear()} . All Rights Reserved.</div>
         <div>
