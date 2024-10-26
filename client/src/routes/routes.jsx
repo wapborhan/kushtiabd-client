@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Dash from "../layout/Dash";
-// import HomePage from "../pages/root/home/HomePage";
+import HomePage from "../pages/root/home/HomePage";
 import Blood from "../pages/root/blood/Blood";
 import About from "../pages/root/blood/About";
 import SignIn from "../layout/signin/SignIn";
@@ -10,6 +10,8 @@ import Profile from "../pages/dash/profile/Profile";
 import QuestAns from "../pages/root/quest-ans/QuestAns";
 import Answare from "../pages/root/quest-ans/Answare";
 import CoomingSoon from "../layout/CoomingSoon";
+import Services from "../pages/root/services/Services";
+import ServicesDetails from "../pages/root/services/details/ServicesDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <CoomingSoon />,
-        // element: <HomePage />,
+        // element: <CoomingSoon />,
+        element: <HomePage />,
       },
       {
         path: "/blood",
@@ -27,9 +29,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <About />,
+        element: <Services />,
       },
-
+      {
+        path: "/services/details/:id",
+        element: <ServicesDetails />,
+      },
       {
         path: "/quest-ans",
         element: <QuestAns />,

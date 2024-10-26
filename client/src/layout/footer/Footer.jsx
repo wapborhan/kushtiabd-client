@@ -1,6 +1,6 @@
 const Footer = () => {
   const styleh5 =
-    "text-lg font-bold border-b-[#fca120] border-b w-11/12 mb-4 pb-2";
+    "text-lg font-bold border-b-[#fca120]  border-b w-11/12 mb-4 pb-2";
   return (
     <>
       {

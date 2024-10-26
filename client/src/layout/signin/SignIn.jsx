@@ -20,6 +20,7 @@ const SignIn = () => {
         const user = result.user;
         if (user) {
           navigate(location?.state ? location?.state : "/");
+          setLoading(false);
         }
       })
       .catch((err) => {
